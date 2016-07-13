@@ -1,18 +1,16 @@
 # tweaks module #
 ===
 
-Collocation of Linux system tweaks. 
-Former name is ltscore.
+Collection of Linux terminal server related system tweaks.
 
 ===
 
 # Compatibility #
 
-Puppet v3 with Ruby 1.8.7 and 1.9.3
+This module has been tested to work on the following systems with Puppet versions v3,
+v3 with future parser and v4 with Ruby versions 1.8.7 (Puppet v3 only), 1.9.3, 2.0.0 and 2.1.0.
 
 ## OS Distributions ##
-
-This module is supported on the following systems with Puppet v3 and Ruby 1.8.7, 1.9.3, 2.0.0 and 2.1.0.
 
 * EL 5
 * EL 6
@@ -23,12 +21,28 @@ This module is supported on the following systems with Puppet v3 and Ruby 1.8.7,
 
 ===
 
+
+# Function support matrix ##
+
+|fix \ OS                |EL5|EL6|EL7|Suse10|Suse11|Suse12|
+|------------------------|---|---|---|------|------|------|
+|fix_access_to_alsa      | - | - | - | +    | +    | -    |
+|fix_haldaemon           | - | - | - | -    | +    | -    |
+|fix_localscratch        | + | + | + | +    | +    | +    |
+|fix_messages_permission | + | + | + | +    | +    | +    |
+|fix_pulse_respawn       | - | + | - | +    | +    | -    |
+|fix_services            | + | + | - | +    | +    | -    |
+|fix_swappiness          | + | + | + | +    | +    | +    |
+|fix_systohc_for_vm      | - | - | - | +    | +    | -    |
+|fix_updatedb            | - | - | - | +    | +    | +    |
+|fix_xinetd              | + | + | - | +    | +    | -    |
+
+
 # Parameters #
 
 fix_access_to_alsa (boolean)
 ----------------------------
 Access MODE of ALSA device will be set to 0666 to make sure they are accessible for all users if it's true.
-It only affects to Suse.
 Nothing will happen with /etc/udev/rules.d/40-alsa.rules if it's false.
 
 - *Default*: false
