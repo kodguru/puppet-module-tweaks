@@ -1,13 +1,13 @@
 {
-  "name": "kylefu8-tweaks",
-  "version": "0.0.1",
-  "author": "kylefu8",
-  "summary": "Linux server tweaks",
+  "name": "phil-friderici-tweaks",
+  "version": "1.1.2",
+  "author": "kylefu8 & phil-friderici",
+  "summary": "Linux terminal server tweaks",
   "license": "Apache-2.0",
-  "source": "git@github.com:kylefu8/puppet-module-tweaks.git",
-  "project_page": "https://github.com/kylefu8/puppet-module-tweaks",
-  "issues_url": "https://github.com/kylefu8/puppet-module-tweaks/issues",
-  "description": "Linux Server related tweaks",
+  "source": "git@github.com:Phil-Friderici/puppet-module-tweaks.git",
+  "project_page": "https://github.com/Phil-Friderici/puppet-module-tweaks",
+  "issues_url": "https://github.com/Phil-Friderici/puppet-module-tweaks/issues",
+  "description": "Collection of Linux terminal server related system tweaks",
   "requirements": [
     {
       "name": "pe",
