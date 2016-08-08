@@ -25,10 +25,7 @@ doc/
 .DS_Store
 
 # Puppet
-coverage
-spec/fixtures/modules
-spec/fixtures/manifests
+coverage/
+spec/fixtures/modules/*
+spec/fixtures/manifests/*
 Gemfile.lock
-
-# Geppetto
-.project
