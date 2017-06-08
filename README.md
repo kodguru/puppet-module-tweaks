@@ -132,3 +132,4 @@ Xinetd will be fixed (install package, configure /etc/xinetd.d/echo) if it's tru
 Nothing will happen with xinetd if it's false.
 
 - *Default*: false
+
