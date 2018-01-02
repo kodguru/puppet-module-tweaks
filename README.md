@@ -27,10 +27,11 @@ v3 with future parser and v4 with Ruby versions 1.8.7 (Puppet v3 only), 1.9.3, 2
 |fix \ OS                |EL5|EL6|EL7|Suse10|Suse11|Suse12|
 |------------------------|---|---|---|------|------|------|
 |fix_access_to_alsa      | - | - | - | +    | +    | -    |
+|fix_core_pattern        | - | + | + | -    | +    | +    |
 |fix_haldaemon           | - | - | - | -    | +    | -    |
 |fix_localscratch        | + | + | + | +    | +    | +    |
 |fix_messages_permission | + | + | + | +    | +    | +    |
-|fix_pulse_respawn       | - | + | - | +    | +    | -    |
+|fix_pulse_respawn       | - | + | + | +    | +    | +    |
 |fix_services            | + | + | - | +    | +    | -    |
 |fix_swappiness          | + | + | + | +    | +    | +    |
 |fix_systohc_for_vm      | - | - | - | +    | +    | -    |
@@ -46,6 +47,18 @@ Access MODE of ALSA device will be set to 0666 to make sure they are accessible 
 Nothing will happen with /etc/udev/rules.d/40-alsa.rules if it's false.
 
 - *Default*: false
+
+fix_core_pattern (boolean)
+------------------------
+Trigger to manage the traditional core dump behavior.
+
+- *Default*: false
+
+fix_core_pattern_value (string)
+-----------------------------
+Content for the file /proc/sys/kernel/core_pattern.
+
+- *Default*: 'core'
 
 fix_haldaemon (boolean)
 -----------------------
