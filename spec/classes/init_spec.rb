@@ -530,7 +530,7 @@ describe 'tweaks' do
         :name    => %w(fix_access_to_alsa fix_haldaemon fix_localscratch fix_messages_permission fix_pulse_respawn fix_services fix_swappiness fix_systohc_for_vm fix_xinetd),
         :valid   => [true, false, 'true', 'false'],
         :invalid => ['invalid', %w(array), { 'ha' => 'sh' }, 3, 2.42],
-        :message => '(Unknown type of boolean|str2bool\(\): Requires either string to work with)',
+        :message => '(Unknown type of boolean|str2bool\(\): Requires string to work with)',
       },
     }
 
@@ -577,7 +577,7 @@ describe 'tweaks' do
         :name    => %w(fix_updatedb),
         :valid   => [true, false, 'true', 'false'],
         :invalid => ['invalid', %w(array), { 'ha' => 'sh' }, 3, 2.42],
-        :message => '(Unknown type of boolean|str2bool\(\): Requires either string to work with)',
+        :message => '(Unknown type of boolean|str2bool\(\): Requires string to work with)',
       },
     }
 
