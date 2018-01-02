@@ -266,10 +266,11 @@ class tweaks (
     case "${::osfamily}-${::lsbmajdistrelease}" {
       'Suse-10', 'Suse-11', 'Suse-12', 'RedHat-5', 'RedHat-6', 'RedHat-7': {
         file_line { 'swappiness':
-          ensure => present,
-          path   => '/proc/sys/vm/swappiness',
-          line   => $fix_swappiness_value,
-          match  => "^${fix_swappiness_value}$",
+          ensure  => present,
+          path    => '/proc/sys/vm/swappiness',
+          line    => $fix_swappiness_value,
+          replace => true,
+          match   => '.',
         }
       }
       default: {

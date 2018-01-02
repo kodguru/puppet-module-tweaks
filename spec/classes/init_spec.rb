@@ -278,10 +278,11 @@ describe 'tweaks' do
           if value == true and v[:localscratch] == true
             it do
               should contain_file_line('swappiness').with({
-                'ensure' => 'present',
-                'path'   => '/proc/sys/vm/swappiness',
-                'line'   => '30',
-                'match'  => '^30$',
+                'ensure'  => 'present',
+                'path'    => '/proc/sys/vm/swappiness',
+                'line'    => '30',
+                'replace' => true,
+                'match'   => '.',
               })
             end
           elsif value == false
@@ -308,10 +309,11 @@ describe 'tweaks' do
           if value == true and v[:localscratch] == true
             it do
               should contain_file_line('swappiness').with({
-                'ensure' => 'present',
-                'path'   => '/proc/sys/vm/swappiness',
-                'line'   => '60',
-                'match'  => '^60$',
+                'ensure'  => 'present',
+                'path'    => '/proc/sys/vm/swappiness',
+                'line'    => '60',
+                'replace' => true,
+                'match'   => '.',
               })
             end
           elsif value == false
