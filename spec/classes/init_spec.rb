@@ -11,32 +11,32 @@ describe 'tweaks' do
 
   fixes = {
     'RedHat-5' => {
-      :os => 'RedHat',  :rel => '5', :access_to_alsa => false,  :haldaemon => false, :localscratch => true,  :messages_permission => true,  :pulse_respawn => false, :services => true,  :swappiness => true,  :systohc_for_vm => false, :updatedb => false, :xinetd => true,
+      :os => 'RedHat',  :rel => '5',  :access_to_alsa => false, :core_pattern => false, :haldaemon => false, :localscratch => true,  :messages_permission => true,  :pulse_respawn => false, :services => true,  :swappiness => true,  :systohc_for_vm => false, :updatedb => false, :xinetd => true,
       :servicelist => [ 'abrtd', 'acpid', 'avahi-daemon', 'bluez-coldplug', 'boot.open-iscsi', 'fbset', 'hotkey-setup', 'libvirtd', 'microcode.ctl', 'namcd', 'network-remotefs', 'novell-iprint-listener', 'owcimomd', 'powersaved', 'smartd', 'smbfs', 'splash', 'splash_early', 'suse-blinux', 'xdm', ],
     },
     'RedHat-6' => {
-      :os => 'RedHat',  :rel => '6', :access_to_alsa => false,  :haldaemon => false, :localscratch => true,  :messages_permission => true,  :pulse_respawn => true,  :services => true,  :swappiness => true,  :systohc_for_vm => false, :updatedb => false, :xinetd => true,
+      :os => 'RedHat',  :rel => '6',  :access_to_alsa => false, :core_pattern => true,  :haldaemon => false, :localscratch => true,  :messages_permission => true,  :pulse_respawn => true,  :services => true,  :swappiness => true,  :systohc_for_vm => false, :updatedb => false, :xinetd => true,
       :servicelist => [ 'abrtd', 'acpid', 'avahi-daemon', 'bluez-coldplug', 'boot.open-iscsi', 'fbset', 'hotkey-setup', 'libvirtd', 'microcode.ctl', 'namcd', 'network-remotefs', 'novell-iprint-listener', 'owcimomd', 'powersaved', 'smartd', 'smbfs', 'splash', 'splash_early', 'suse-blinux', 'xdm', ],
     },
     'RedHat-7' => {
-      :os => 'RedHat',  :rel => '7', :access_to_alsa => false,  :haldaemon => false, :localscratch => true,  :messages_permission => true,  :pulse_respawn => true,  :services => false, :swappiness => true,  :systohc_for_vm => false, :updatedb => false, :xinetd => false,
+      :os => 'RedHat',  :rel => '7',  :access_to_alsa => false, :core_pattern => true,  :haldaemon => false, :localscratch => true,  :messages_permission => true,  :pulse_respawn => true,  :services => false, :swappiness => true,  :systohc_for_vm => false, :updatedb => false, :xinetd => false,
       :servicelist => [],
     },
     'Suse-10' =>  {
-      :os => 'Suse',    :rel => '10', :access_to_alsa => true,  :haldaemon => false, :localscratch => true,  :messages_permission => true,  :pulse_respawn => true,  :services => true,  :swappiness => true,  :systohc_for_vm => true,  :updatedb => true,  :xinetd => true,
+      :os => 'Suse',    :rel => '10', :access_to_alsa => true,  :core_pattern => false, :haldaemon => false, :localscratch => true,  :messages_permission => true,  :pulse_respawn => true,  :services => true,  :swappiness => true,  :systohc_for_vm => true,  :updatedb => true,  :xinetd => true,
       :servicelist => [ 'acpid', 'avahi-daemon', 'fbset', 'hotkey-setup', 'microcode', 'namcd', 'owcimomd', 'powersaved', 'smartd', 'smbfs', 'splash', 'splash_early', 'suse-blinux', 'xdm', ],
     },
     'Suse-11' =>  {
-      :os => 'Suse',    :rel => '11', :access_to_alsa => true,  :haldaemon => true,  :localscratch => true,  :messages_permission => true,  :pulse_respawn => true,  :services => true,  :swappiness => true,  :systohc_for_vm => true,  :updatedb => true,  :xinetd => true,
+      :os => 'Suse',    :rel => '11', :access_to_alsa => true,  :core_pattern => true,  :haldaemon => true,  :localscratch => true,  :messages_permission => true,  :pulse_respawn => true,  :services => true,  :swappiness => true,  :systohc_for_vm => true,  :updatedb => true,  :xinetd => true,
       :servicelist => [ 'acpid', 'avahi-daemon', 'bluez-coldplug', 'boot.open-iscsi', 'fbset', 'libvirtd', 'microcode.ctl', 'namcd', 'network-remotefs', 'smartd', 'smbfs', 'splash', 'splash_early', 'xdm', ],
     },
     'Suse-12' =>  {
-      :os => 'Suse',    :rel => '12', :access_to_alsa => false, :haldaemon => false, :localscratch => true,  :messages_permission => true,  :pulse_respawn => true,  :services => false, :swappiness => true,  :systohc_for_vm => false, :updatedb => true,  :xinetd => false,
+      :os => 'Suse',    :rel => '12', :access_to_alsa => false, :core_pattern => true,  :haldaemon => false, :localscratch => true,  :messages_permission => true,  :pulse_respawn => true,  :services => false, :swappiness => true,  :systohc_for_vm => false, :updatedb => true,  :xinetd => false,
       :servicelist => [],
     },
     # not existing OS
     'WierdOS-12' =>  {
-      :os => 'WierdOS', :rel => '12', :access_to_alsa => false, :haldaemon => false, :localscratch => false, :messages_permission => false, :pulse_respawn => false, :services => false, :swappiness => false, :systohc_for_vm => false, :updatedb => false, :xinetd => false,
+      :os => 'WierdOS', :rel => '12', :access_to_alsa => false, :core_pattern => false, :haldaemon => false, :localscratch => false, :messages_permission => false, :pulse_respawn => false, :services => false, :swappiness => false, :systohc_for_vm => false, :updatedb => false, :xinetd => false,
       :servicelist => [],
       },
     }
@@ -79,6 +79,69 @@ describe 'tweaks' do
         end
       end
       # </fix_access_to_alsa functionality>
+
+      # <fix_core_pattern functionality>
+      [true,false].each do |value|
+        context "with fix_core_pattern set to valid #{value} (as #{value.class})" do
+          let :params do
+            { :fix_core_pattern => value,
+            }
+          end
+          if value == true and v[:core_pattern] == true
+            it do
+              should contain_file_line('core_pattern').with({
+                'ensure'  => 'present',
+                'path'    => '/proc/sys/kernel/core_pattern',
+                'line'    => 'core',
+                'replace' => true,
+                'match'   => '.',
+              })
+            end
+          elsif value == false
+            it do
+              should_not contain_file_line('core_pattern')
+            end
+          else
+            it 'should fail' do
+              expect {
+                should contain_class('tweaks')
+              }.to raise_error(Puppet::Error,/fix_core_pattern is only supported on RedHat 6 \& 7, Suse 11 \& 12/)
+            end
+          end
+        end
+      end
+
+      [true,false].each do |value|
+        context "with fix_core_pattern set to valid #{value} (as #{value.class}), and fix_core_pattern_value set to test" do
+          let :params do
+            { :fix_core_pattern       => value,
+              :fix_core_pattern_value => 'test',
+            }
+          end
+          if value == true and v[:core_pattern] == true
+            it do
+              should contain_file_line('core_pattern').with({
+                'ensure'  => 'present',
+                'path'    => '/proc/sys/kernel/core_pattern',
+                'line'    => 'test',
+                'replace' => true,
+                'match'   => '.',
+              })
+            end
+          elsif value == false
+            it do
+              should_not contain_file_line('core_pattern')
+            end
+          else
+            it 'should fail' do
+              expect {
+                should contain_class('tweaks')
+              }.to raise_error(Puppet::Error,/fix_core_pattern is only supported on RedHat 6 \& 7, Suse 11 \& 12/)
+            end
+          end
+        end
+      end
+      # </fix_core_pattern functionality>
 
       # <fix_haldaemon functionality>
       [true,false].each do |value|

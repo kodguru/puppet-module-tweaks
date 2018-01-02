@@ -4,6 +4,8 @@
 #
 class tweaks (
   $fix_access_to_alsa          = false,
+  $fix_core_pattern            = false,
+  $fix_core_pattern_value      = 'core',
   $fix_haldaemon               = false,
   $fix_localscratch            = false,
   $fix_localscratch_path       = '/local/scratch',
@@ -275,6 +277,33 @@ class tweaks (
       }
       default: {
         fail('fix_swappiness is only supported on RedHat 5, 6 & 7, Suse 10, 11 & 12.')
+      }
+    }
+  }
+
+# convert stringified booleans for fix_core_pattern
+  if is_bool($fix_core_pattern) {
+    $fix_core_pattern_real = $fix_core_pattern
+  } else {
+    $fix_core_pattern_real = str2bool($fix_core_pattern)
+  }
+
+# Default value for fix_core_pattern is: core
+# RedHat 6 default is: |/usr/libexec/abrt-hook-ccpp %s %c %p %u %g %t e
+# SuSE 12 default is: |/usr/lib/systemd/systemd-coredump %P %u %g %s %t %e
+  if $fix_core_pattern_real == true {
+    case "${::osfamily}-${::lsbmajdistrelease}" {
+      'Suse-11', 'Suse-12', 'RedHat-6', 'RedHat-7': {
+        file_line { 'core_pattern':
+          ensure  => present,
+          path    => '/proc/sys/kernel/core_pattern',
+          line    => $fix_core_pattern_value,
+          replace => true,
+          match   => '.',
+        }
+      }
+      default: {
+        fail('fix_core_pattern is only supported on RedHat 6 & 7, Suse 11 & 12.')
       }
     }
   }
