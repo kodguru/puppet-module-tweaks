@@ -132,7 +132,7 @@ class tweaks (
 # Set autospawn to <no> in /etc/pulse/client.conf
   if $fix_pulse_respawn_real == true {
     case "${::osfamily}-${::lsbmajdistrelease}" {
-      'Suse-10', 'Suse-11', 'RedHat-6': {
+      'Suse-10', 'Suse-11', 'Suse-12', 'RedHat-6', 'RedHat-7': {
         file_line { 'disable_pulse_respawn':
           ensure => present,
           path   => '/etc/pulse/client.conf',
@@ -141,7 +141,7 @@ class tweaks (
         }
       }
       default: {
-        fail('fix_pulse_respawn is only supported on RedHat 6, Suse 10 & 11.')
+        fail('fix_pulse_respawn is only supported on RedHat 6 & 7, Suse 10, 11 & 12.')
       }
     }
   }

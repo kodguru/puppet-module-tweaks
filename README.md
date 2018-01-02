@@ -30,7 +30,7 @@ v3 with future parser and v4 with Ruby versions 1.8.7 (Puppet v3 only), 1.9.3, 2
 |fix_haldaemon           | - | - | - | -    | +    | -    |
 |fix_localscratch        | + | + | + | +    | +    | +    |
 |fix_messages_permission | + | + | + | +    | +    | +    |
-|fix_pulse_respawn       | - | + | - | +    | +    | -    |
+|fix_pulse_respawn       | - | + | + | +    | +    | +    |
 |fix_services            | + | + | - | +    | +    | -    |
 |fix_swappiness          | + | + | + | +    | +    | +    |
 |fix_systohc_for_vm      | - | - | - | +    | +    | -    |

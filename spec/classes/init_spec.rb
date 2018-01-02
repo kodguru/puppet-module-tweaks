@@ -19,7 +19,7 @@ describe 'tweaks' do
       :servicelist => [ 'abrtd', 'acpid', 'avahi-daemon', 'bluez-coldplug', 'boot.open-iscsi', 'fbset', 'hotkey-setup', 'libvirtd', 'microcode.ctl', 'namcd', 'network-remotefs', 'novell-iprint-listener', 'owcimomd', 'powersaved', 'smartd', 'smbfs', 'splash', 'splash_early', 'suse-blinux', 'xdm', ],
     },
     'RedHat-7' => {
-      :os => 'RedHat',  :rel => '7', :access_to_alsa => false,  :haldaemon => false, :localscratch => true,  :messages_permission => true,  :pulse_respawn => false, :services => false, :swappiness => true,  :systohc_for_vm => false, :updatedb => false, :xinetd => false,
+      :os => 'RedHat',  :rel => '7', :access_to_alsa => false,  :haldaemon => false, :localscratch => true,  :messages_permission => true,  :pulse_respawn => true,  :services => false, :swappiness => true,  :systohc_for_vm => false, :updatedb => false, :xinetd => false,
       :servicelist => [],
     },
     'Suse-10' =>  {
@@ -31,7 +31,7 @@ describe 'tweaks' do
       :servicelist => [ 'acpid', 'avahi-daemon', 'bluez-coldplug', 'boot.open-iscsi', 'fbset', 'libvirtd', 'microcode.ctl', 'namcd', 'network-remotefs', 'smartd', 'smbfs', 'splash', 'splash_early', 'xdm', ],
     },
     'Suse-12' =>  {
-      :os => 'Suse',    :rel => '12', :access_to_alsa => false, :haldaemon => false, :localscratch => true,  :messages_permission => true,  :pulse_respawn => false, :services => false, :swappiness => true,  :systohc_for_vm => false, :updatedb => true,  :xinetd => false,
+      :os => 'Suse',    :rel => '12', :access_to_alsa => false, :haldaemon => false, :localscratch => true,  :messages_permission => true,  :pulse_respawn => true,  :services => false, :swappiness => true,  :systohc_for_vm => false, :updatedb => true,  :xinetd => false,
       :servicelist => [],
     },
     # not existing OS
@@ -261,7 +261,7 @@ describe 'tweaks' do
             it 'should fail' do
               expect {
                 should contain_class('tweaks')
-              }.to raise_error(Puppet::Error, /fix_pulse_respawn is only supported on RedHat 6, Suse 10 \& 11/ )
+              }.to raise_error(Puppet::Error, /fix_pulse_respawn is only supported on RedHat 6 \& 7, Suse 10, 11 \& 12/ )
             end
           end
         end
